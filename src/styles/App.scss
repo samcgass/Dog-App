@@ -1,0 +1,110 @@
+@use 'variables'as v;
+
+@mixin gradient {
+    background: rgb(81, 128, 142);
+    background: linear-gradient(90deg, rgba(81, 128, 142, 1) 0%, rgba(230, 253, 255, 1) 100%);
+}
+
+.main {
+    @include gradient();
+    color: v.$primary-font-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+
+    &_content {
+        font-size: v.$secondary-font-size;
+        max-width: 600px;
+        padding-right: 10em;
+    }
+
+    &_video {
+        height: 10em;
+        width: auto;
+    }
+
+}
+
+.navbar {
+    @include gradient();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 2em 0 2em;
+
+    h1 {
+        color: v.$light-font-color;
+    }
+
+    nav {}
+
+    &_link {
+        color: v.$secondary-font-color;
+        font-size: v.$secondary-font-size;
+        margin: 0.25em;
+    }
+
+}
+
+.breeds {
+    text-align: center;
+
+    &_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &_tile {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 5px #AAAAAA;
+        border-radius: v.$tile-radius;
+        margin: 1em;
+
+        img {
+            height: v.$img-height;
+            border-top-left-radius: v.$tile-radius;
+            border-top-right-radius: v.$tile-radius;
+        }
+
+        &_name {
+            text-transform: capitalize;
+            padding: 0.5em;
+            font-size: v.$secondary-font-size;
+        }
+
+    }
+
+}
+
+@keyframes spin {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+
+.loading {
+    margin: v.$loading-height;
+    position: relative;
+
+    &_spinner {
+        animation: 1.5s linear infinite spin;
+        animation-play-state: inherit;
+        border: solid 5px #eeeeee;
+        border-bottom-color: #555555;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        height: v.$loading-height;
+        width: v.$loading-height;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+    }
+}

@@ -20,11 +20,13 @@ export const DogTile = ({ breed }) => {
     }, [breed])
 
     return (
-        <div>
+        <div className='breeds_tile'>
             {showLoading ? <LoadingSpinner /> :
                 <img src={imgUrl} alt={breed} />
             }
-            {breed}
+            <label className='breeds_tile_name'>
+                {breed}
+            </label>
         </div>
     )
 }

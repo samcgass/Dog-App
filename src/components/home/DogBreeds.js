@@ -37,13 +37,14 @@ export const DogBreeds = () => {
     }, []);
 
     return (
-        <div>
+        <article className='breeds'>
+            <h2>Dog Breeds</h2>
             {showLoading ? <LoadingSpinner /> :
-                <div>
+                <div className='breeds_container'>
                     {breeds.map(breed => {
                         return (<DogTile key={breed} breed={breed} />)
                     })}
                 </div>}
-        </div>
+        </article>
     )
 }

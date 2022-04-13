@@ -1,4 +1,5 @@
 import React from 'react'
+import { DogBreeds } from './DogBreeds'
 
 export const Home = () => {
     return (
@@ -13,6 +14,7 @@ export const Home = () => {
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Lj8-1dvazAU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+            <DogBreeds />
         </div>
     )
 }

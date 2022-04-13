@@ -12,6 +12,7 @@ export const DogBreeds = () => {
         let breeds = [];
         const data = response.data.message;
         for (let breed in data) {
+            breeds.push(breed);
             if (!!data[breed]) {
                 data[breed].forEach(subbreed => {
                     breeds.push(`${subbreed} ${breed}`);

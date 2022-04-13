@@ -8,8 +8,13 @@ export const DogTile = ({ breed }) => {
 
     useEffect(() => {
         const [mainBreed, subBreed] = breed.split(' ');
+        let endpoint;
+        if (subBreed)
+            endpoint = `https://dog.ceo/api/breed/${subBreed}/${mainBreed}/images/random/1`;
+        else
+            endpoint = `https://dog.ceo/api/breed/${mainBreed}/images/random/1`;
         axios.get(
-            `https://dog.ceo/api/breed/${subBreed}/${mainBreed}/images/random/1`
+            endpoint
         ).then(response => {
             setImgUrl(response.data.message[0]);
             setLoading(false);

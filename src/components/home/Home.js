@@ -4,8 +4,8 @@ import { DogBreeds } from './DogBreeds'
 export const Home = () => {
     return (
         <>
-            <article className='main'>
-                <div>
+            <section className='main'>
+                <div className='main_container'>
                     <h2 className='main_heading'>Lorem ipsum dolor sit amet</h2>
                     <p className='main_content'>
                         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -17,7 +17,7 @@ export const Home = () => {
                     </p>
                 </div>
                 <iframe className='main_video' src="https://www.youtube.com/embed/Lj8-1dvazAU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </article>
+            </section>
             <DogBreeds />
         </>
     )

@@ -25,13 +25,13 @@ export const DogTile = ({ breed }) => {
     }, [breed])
 
     return (
-        <div className='breeds_tile'>
+        <figure className='breeds_tile'>
             {showLoading ? <LoadingSpinner /> :
                 <img src={imgUrl} alt={breed} />
             }
-            <label className='breeds_tile_name'>
+            <figcaption className='breeds_tile_name'>
                 {breed}
-            </label>
-        </div>
+            </figcaption>
+        </figure>
     )
 }

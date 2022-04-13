@@ -38,7 +38,7 @@ export const DogBreeds = () => {
     }, []);
 
     return (
-        <article className='breeds'>
+        <main className='breeds'>
             <h2>Dog Breeds</h2>
             {showLoading ? <LoadingSpinner /> :
                 <div className='breeds_container'>
@@ -46,6 +46,6 @@ export const DogBreeds = () => {
                         return (<DogTile key={breed} breed={breed} />)
                     })}
                 </div>}
-        </article>
+        </main>
     )
 }

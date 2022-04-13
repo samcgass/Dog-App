@@ -1,8 +1,8 @@
 @use 'variables'as v;
 
 @mixin gradient {
-    background: rgb(81, 128, 142);
-    background: linear-gradient(90deg, rgba(81, 128, 142, 1) 0%, rgba(230, 253, 255, 1) 100%);
+    background: v.$gradient-primary-color;
+    background: linear-gradient(90deg, v.$gradient-primary-color 0%, v.$gradient-secondary-color 100%);
 }
 
 .main {
@@ -19,8 +19,7 @@
     }
 
     &_video {
-        height: 10em;
-        width: auto;
+        width: max-content;
     }
 
 }
@@ -35,8 +34,6 @@
     h1 {
         color: v.$light-font-color;
     }
-
-    nav {}
 
     &_link {
         color: v.$secondary-font-color;
@@ -106,5 +103,31 @@
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
         will-change: transform;
+    }
+}
+
+@media (max-width: v.$mobile-screen-size) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .main {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        &_content {
+            padding: 0;
+        }
+    }
+
+    .breeds {
+        &_tile {
+            width: 60%;
+
+            img {
+                height: auto;
+            }
+        }
     }
 }
